@@ -30,10 +30,15 @@ function Home() {
               }
     let script = {name: "N'ko", id: "nko"};
     const onVirtualKeyboardChange = input => {
-        setInput(input);
-          keyboard.current.setInput(' ');
-        
+    //  const input = event.target.value;
+    setInput(input);
     }
+    const onChangeInput = event => {
+      const input = event.target.value;
+      setInput(input);
+      keyboard.current.setInput(input);
+    };
+
     const onKeyPress = (button) => {
         console.log("Button pressed", button);
       
@@ -53,10 +58,10 @@ function Home() {
         N'ko Keyboard Input Tool
 
         </header>
-        <textarea style={{width:"100vw", height:"50vh", fontSize:"30px"}} value={input} onChange={e => setInput(e.target.value)} />
+        <input style={{width:"100vw", height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput} />
         <Keyboard
            layout= {chooseKeyboard()}
-            ref={keyboard}
+            keyboardRef={r => (keyboard.current = r)}
             layoutName={layout}
             onChange={onVirtualKeyboardChange}
             onKeyPress={onKeyPress}
