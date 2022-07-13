@@ -7,6 +7,7 @@
 
 ## Roadmap
 <p>  I think in the long term I aim to support any African language script + maby a chrome extension/ mobile keyboard to generalize use. Would also be cool to have a language agnostic (phonetic only) conversion between different scripts</p>
+
 # Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
