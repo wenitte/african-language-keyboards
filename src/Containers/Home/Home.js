@@ -59,7 +59,7 @@ function Home() {
 
         </header>
         <input style={{width:"100vw", unicodeBidi:"bidi-override", 
- direction:"RTL", height:"50vh", fontSize:"30px", marginLeft:"50px", marginRight:"50px"}} value={input} onChange={onChangeInput}/>
+ direction:"RTL", height:"50vh", fontSize:"30px", padding:"10px"}} value={input} onChange={onChangeInput}/>
         <Keyboard
            layout= {chooseKeyboard()}
             keyboardRef={r => (keyboard.current = r)}
