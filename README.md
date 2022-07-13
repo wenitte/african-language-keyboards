@@ -1,6 +1,6 @@
-#Mandla African Language Keyboard 
+# Mandla African Language Keyboard 
 
-#Live Link
+# Live Link
 <a href="keyboards.mandla.ai"> Live Link </a>
 
 <p> I’ve been learning N’ko script for the past few months and am now wanting to type it. Unfortunately couldn’t find any existing online keyboards (to be fair did not scroll past page 2 of google) so I made one today. </p>
