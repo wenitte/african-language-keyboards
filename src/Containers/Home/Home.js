@@ -55,7 +55,7 @@ function Home() {
     return (
       <div className="App">
         <header className="App-header">
-        N'ko Keyboard Input Tool
+        N'ko Keyboard Input Tool by Mandla
 
         </header>
         <input style={{width:"100vw", unicodeBidi:"bidi-override", 
