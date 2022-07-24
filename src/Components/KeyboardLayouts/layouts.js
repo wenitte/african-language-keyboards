@@ -18,6 +18,8 @@ function chooseKeyboard(lang){
         return mooréKeyboard;
         case 'Kassem':
         return kassemKeyboard;
+        case 'Adlam':
+        return adlamKeyboard;
 
         default:
             return generalKeyboard;
@@ -25,7 +27,23 @@ function chooseKeyboard(lang){
     }
 }
         
+let adlamKeyboard = {
+  default: [
+   " 𞥊 𞥈 𞥐 𞥙 𞥘 𞥗 𞥖 𞥕 𞥔 𞥓 𞥒 𞥑  ـ",
+"! 𞤹 𞤽 𞤨 𞤮 𞤭 𞤵 𞤴 𞤼 𞤪 𞤫 𞤱 𞤻", 
+"𞥆 𞥄 𞤤 𞤳 𞤶 𞤸 𞤺 𞤬 𞤣 𞤧 𞤢" ,
+"{shift} ؟ . ⹁ 𞤥 𞤲 𞤦 𞤩 𞤷 𞤰 𞤯 {shift} ",
+".com @ {space}",],
 
+  shift: [
+    "𞥇 𞥉 ) ( * & ) ( » « › ‹ …",
+    "𞥞 𞤗 𞤛 𞤆 𞤌 𞤋 𞤓 𞤒 𞤚 𞤈 𞤉 𞤏 𞤙",
+    "𞥆 𞥄 𞤤 𞤳 𞤶 𞤸 𞤺 𞤬 𞤣 𞤧 𞤢",
+    "𞥟 : ⁏ 𞤃 𞤐 𞤄 𞤇 𞤕 𞤎 𞤍",
+     ".com @ {space}",
+  ]
+
+}
 let twiKeyboard = {
     default: [
       "ɛ ɔ",

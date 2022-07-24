@@ -2,6 +2,8 @@ import React, { Component,  useEffect, useState, useRef } from "react";
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
+import {useParams, Link} from "react-router-dom";
+import {getLanguageNameFromCode} from "../../Utils/utils.js";
 // import logo from './logo.svg';
 
 let latinNkoCorrespondence = {
@@ -40,6 +42,7 @@ let latinNkoCorrespondence = {
 }
 
 function Convert() {
+    let script = useParams()
     let [latinValue, setLatinValue] = useState("");
     let [nkoValue, setNkoValue] = useState("");
     const onLatinChangeInput = event => {
@@ -53,6 +56,10 @@ function Convert() {
         console.log(nkoValue);
     }
     
+    function chooseCorrectWriteLink(code) {
+        return "/write/" + code+"/";
+      } 
+
     function convertLatinToNko(input){
         //first reverse the input
         let reversedInput = input.split("").reverse().join("");
@@ -65,15 +72,18 @@ function Convert() {
         return nkoInput.split("").reverse().join("");
         return nkoInput;
     }
-    
+    const chooseCorrectAboutLink = (code) => {
+        return "/About/" + code+"/";
+       }
+
     return (
       <div className="App">
       
         <header className="App-header">
-        Convert N'ko Script by Mandla
+        Convert {getLanguageNameFromCode(script.script)} Script by Mandla
                   
-<span><a href = "/"> <button>N'ko Keyboard</button></a>
-<a href ="/About/Nko"> <button>About N'ko</button> </a> </span>
+<span><a href ={chooseCorrectWriteLink(script.script)}> <button> {script.script} Keyboard</button></a>
+<a href ={chooseCorrectAboutLink(script.script)}> <button>About {getLanguageNameFromCode(script.script)}</button> </a> </span>
         </header>
         Latin Script 
         <div>

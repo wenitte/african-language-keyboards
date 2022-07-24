@@ -11,8 +11,8 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/write/:lang/:script" element={<Home />} />
-          <Route path="/convert/" element={<Convert />} />
+          <Route path="/write/:script" element={<Home />} />
+          <Route path="/convert/:script" element={<Convert />} />
           <Route path="/about/:script" element={<About />} />
 
         </Routes>
