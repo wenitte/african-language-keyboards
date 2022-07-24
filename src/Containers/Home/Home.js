@@ -4,7 +4,7 @@ import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
 import  {useParams, Link} from "react-router-dom";
 import {getLanguageNameFromCode} from "../../Utils/utils.js";
-import LanguageSelectDropdown from "../../Components/LanguageSelectDropDown/LanguageSelectDropDown.js";
+import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
 
 
 
@@ -50,8 +50,8 @@ if(script.script==undefined){
       
         <header className="App-header">
         <span>
-        <LanguageSelectDropdown script={script.script} />
-       Keyboard Input Tool by Mandla</span>
+        <ScriptSelectDropdown script={script.script} />
+        {"  "} Keyboard Input Tool by Mandla</span>
 <Link to = {chooseCorrectAboutLink(script.script)} > <button> About  {getLanguageNameFromCode(script.script)}</button> </Link>
 <Link to = {chooseCorrectConvertLink(script.script)}> <button> Convert  {getLanguageNameFromCode(script.script)}</button> </Link>
         </header>

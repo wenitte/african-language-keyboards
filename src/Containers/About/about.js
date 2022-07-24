@@ -6,6 +6,7 @@ import  {useParams, Link} from "react-router-dom";
 
 import {getLanguageNameFromCode,getAboutText} from "../../Utils/utils.js";
 import Alphabet from "../../Components/Alphabet/Alphabet.js";
+import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
 function About () {
 //    let { script } = useParams;
    
@@ -20,7 +21,9 @@ const chooseCorrectConvertLink = (code) => {
       <div className="App">
       
         <header className="App-header">
-        About {getLanguageNameFromCode(script.script)} Script
+         <span> 
+        About <ScriptSelectDropdown script={script.script} />  Script
+        </span>
         <span>
        
         <Link to = {chooseCorrectWriteLink(script.script)} > <button> Write  {getLanguageNameFromCode(script.script)}</button> </Link>

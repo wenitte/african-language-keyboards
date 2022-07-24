@@ -4,6 +4,7 @@ import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
 import {useParams, Link} from "react-router-dom";
 import {getLanguageNameFromCode} from "../../Utils/utils.js";
+import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
 // import logo from './logo.svg';
 
 let latinNkoCorrespondence = {
@@ -80,7 +81,8 @@ function Convert() {
       <div className="App">
       
         <header className="App-header">
-        Convert {getLanguageNameFromCode(script.script)} Script by Mandla
+        <span> Convert {" "} <ScriptSelectDropdown script={script.script} />
+        {"  "}   Script by Mandla </span>
                   
 <span><a href ={chooseCorrectWriteLink(script.script)}> <button> {script.script} Keyboard</button></a>
 <a href ={chooseCorrectAboutLink(script.script)}> <button>About {getLanguageNameFromCode(script.script)}</button> </a> </span>
