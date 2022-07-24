@@ -2,33 +2,20 @@ import React, { Component,  useEffect, useState, useRef } from "react";
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
-// import logo from './logo.svg';
+import  {useParams, Link} from "react-router-dom";
+
 
 
 
 function Home() {
+  let script = useParams()
     const [layout, setLayout] = useState("default");
     const [input, setInput] = useState("");
     const keyboard = useRef();
-    let nkoKeyboard = {
-        layout: {
-          default: [
-              "1",
-            //   "{tab} ߊ ߛ ߘ ߝ ߜ ߤ ߖ ߞ ߟ ߸ ߴ [ ]",
-            //   "{lock} ߢ ߏ ߗ ߍ ߓ ߣ ߡ ߲ ߳ ⸮ {enter}",
-            // //   "{shift} \u07E2 \u07CF \u07D7 \u07CD \u07D3 \u07E3 \u07E1 \u07F2 \u07F3 \u2E2E {shift}",
-            //   ".com @ {space}",
-          ],
-        //   shift: [
-        //     "ߒ ߥ ߋ ߙ ߕ ߦ ߎ ߌ ߐ ߔ = {bksp}",
-        //     "{tab} ߊ ߛ ߘ ߝ ߜ ߤ ߖ ߞ ߟ ߸ ߴ [ ]",
-        //     "{lock} ߢ ߏ ߗ ߍ ߓ ߣ ߡ ߲ ߳ ⸮ {enter}",
-        //   //   "{shift} \u07E2 \u07CF \u07D7 \u07CD \u07D3 \u07E3 \u07E1 \u07F2 \u07F3 \u2E2E {shift}",
-        //     ".com @ {space}",
-        //   ],
-      },
-              }
-    let script = {name: "N'ko", id: "nko"};
+if(!script){
+  script = {name: "N'ko", id: "nko"};
+}
+    // let script = {name: "N'ko", id: "nko"};
     const onVirtualKeyboardChange = input => {
     //  const input = event.target.value;
     setInput(input);
@@ -41,10 +28,6 @@ function Home() {
 
     const onKeyPress = (button) => {
         console.log("Button pressed", button);
-      
-        /**
-         * If you want to handle the shift and caps lock buttons
-         */
         if (button === "{shift}" || button === "{lock}") handleShift();
       };
     
@@ -54,11 +37,13 @@ function Home() {
       };
     return (
       <div className="App">
+      
         <header className="App-header">
         N'ko Keyboard Input Tool by Mandla
-
+<Link to = "/About/Nko" > <button> About N'ko</button> </Link>
+<Link to = "/Convert/" > <button> Convert N'ko</button> </Link>
         </header>
-        <input style={{width:"90vw", unicodeBidi:"bidi-override", 
+        <textarea  rows="15" cols="100"  style={{width:"90vw", unicodeBidi:"bidi-override", 
  direction:"RTL", height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput}/>
         <Keyboard
            layout= {chooseKeyboard()}
