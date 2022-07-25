@@ -32,8 +32,9 @@ function ScriptSelectDropdown(props) {
    
      <Button style= {{backgroundColor:"transparent", color:"white", borderColor:"white",borderRadius:"20px", width:"150px", height:"40px", fontWeight:"bold", fontSize:"25px"}}>
         <Col style={{marginTop:"5px", }}>
-        <Select value={selectedOption} options={scripts} onChange={()=>handleSelect()} style= {{backgroundColor:"transparent", color:"white", borderColor:"white",borderRadius:"20px", width:"10px", height:"40px", fontWeight:"bold", fontSize:"25px"}}> {getLanguageNameFromCode(props.script)} </Select>
-        </Col>
+        {/* <Select value={selectedOption} options={scripts} onChange={()=>handleSelect()} style= {{backgroundColor:"transparent", color:"white", borderColor:"white",borderRadius:"20px", width:"10px", height:"40px", fontWeight:"bold", fontSize:"25px"}}> {getLanguageNameFromCode(props.script)} </Select> */}
+        {getLanguageNameFromCode(props.script)} 
+          </Col>
         <Col style= {{marginTop:"-30px"}}>
         <ExpandMoreIcon style={{color:"white", fontSize:"30px" ,marginLeft:"90px"}}/>
         </Col>

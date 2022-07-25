@@ -5,6 +5,9 @@ import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
 import {useParams, Link} from "react-router-dom";
 import {getLanguageNameFromCode} from "../../Utils/utils.js";
 import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
+import {chooseCorrespondence} from "../../Utils/convertUtils.js"
+
+
 // import logo from './logo.svg';
 
 let latinNkoCorrespondence = {
@@ -66,7 +69,7 @@ function Convert() {
         let reversedInput = input.split("").reverse().join("");
         //then replace all the latin characters with their nko equivalents
         let nkoInput = reversedInput.replace(/[a-z]/gi, function(matched){
-            return latinNkoCorrespondence[matched];
+            return chooseCorrespondence("latin", script.script)[matched];
         }
         );
         //then reverse the output
@@ -94,7 +97,7 @@ function Convert() {
             </textArea>
             </div>
             <div>
-            N'ko script   Output
+            {script.script} script   Output
             <p style = {{direction:"RTL"}}> {nkoValue}</p>
          <textArea value={nkoValue} onChange={onNkoChangeInput} style={{direction:"RTL", border:"none"}} >
                 
