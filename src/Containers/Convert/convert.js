@@ -46,6 +46,10 @@ let latinNkoCorrespondence = {
 }
 
 function Convert() {
+
+
+
+
     let script = useParams()
     let [latinValue, setLatinValue] = useState("");
     let [nkoValue, setNkoValue] = useState("");

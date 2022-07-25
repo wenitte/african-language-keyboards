@@ -3,9 +3,7 @@ import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
 import  {useParams, Link} from "react-router-dom";
-
 import {getLanguageNameFromCode,getAboutText} from "../../Utils/utils.js";
-import Alphabet from "../../Components/Alphabet/Alphabet.js";
 import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
 function About () {
 //    let { script } = useParams;

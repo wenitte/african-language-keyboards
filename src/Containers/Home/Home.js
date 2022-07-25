@@ -18,6 +18,7 @@ function Home() {
 if(script.script==undefined){
   script.script= "Nko";
 }
+let direction = chooseKeyboard(script.script).dir;
 
     // let script = {name: "N'ko", id: "nko"};
     const onVirtualKeyboardChange = input => {
@@ -56,7 +57,7 @@ if(script.script==undefined){
 <Link to = {chooseCorrectConvertLink(script.script)}> <button> Convert  {getLanguageNameFromCode(script.script)}</button> </Link>
         </header>
         <textarea  rows="15" cols="100"  style={{width:"90vw", unicodeBidi:"bidi-override", 
- direction:"RTL", height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput}/>
+ direction:direction, height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput}/>
         <Keyboard
            layout= {chooseKeyboard(script.script)}
             keyboardRef={r => (keyboard.current = r)}
