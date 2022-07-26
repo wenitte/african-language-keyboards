@@ -5,7 +5,7 @@ import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
 import {useParams, Link} from "react-router-dom";
 import {getLanguageNameFromCode} from "../../Utils/utils.js";
 import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";
-import {chooseCorrespondence} from "../../Utils/convertUtils.js"
+import {chooseCorrespondence, choosePreProcessing} from "../../Utils/convertUtils.js"
 
 
 // import logo from './logo.svg';
@@ -54,8 +54,8 @@ function Convert() {
     let [latinValue, setLatinValue] = useState("");
     let [nkoValue, setNkoValue] = useState("");
     const onLatinChangeInput = event => {
-        setNkoValue(convertLatinToNko(event.target.value.toLowerCase()));
-        console.log(convertLatinToNko(event.target.value));
+        setNkoValue(convertScriptAToScriptB(event.target.value.toLowerCase()));
+        console.log(convertScriptAToScriptB(event.target.value));
         console.log(nkoValue);
       };
     
@@ -68,17 +68,16 @@ function Convert() {
         return "/write/" + code+"/";
       } 
 
-    function convertLatinToNko(input){
-        //first reverse the input
-        let reversedInput = input.split("").reverse().join("");
+    function convertScriptAToScriptB(input){
+        //Preprocess the input
+        let preProcessedInput = choosePreProcessing("latin", script.script, input);
         //then replace all the latin characters with their nko equivalents
-        let nkoInput = reversedInput.replace(/[a-z]/gi, function(matched){
+        let convertedText = preProcessedInput.replace(/[a-z]/gi, function(matched){
             return chooseCorrespondence("latin", script.script)[matched];
         }
         );
-        //then reverse the output
-        return nkoInput.split("").reverse().join("");
-        return nkoInput;
+   
+        return convertedText;
     }
     const chooseCorrectAboutLink = (code) => {
         return "/About/" + code+"/";

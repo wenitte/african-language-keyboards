@@ -10,6 +10,44 @@ export function chooseCorrespondence(a, b){
     }
 
 }
+export function choosePreProcessing(a, b, textToConvert){
+    if(a=="latin"){
+        if(b=="Nko"){
+            return LatinToNkoPreProcessing(textToConvert);
+        }
+        if(b=="Adlam"){
+            return LatinToAdlamPreProcessing(textToConvert);
+        }
+
+    }
+
+}
+export function LatinToNkoPreProcessing(latinString){
+    //Replace all 'ck' with 'k'
+    latinString = latinString.replace(/ck/g, "k");
+    //If the string starts with c replace it with k
+    if(latinString.startsWith("c")){
+        latinString = latinString.replace(/c/g, "k");
+    }
+    //If the string contains a c that is not the first letter, replace it with s
+    latinString = latinString.replace(/c(?![a-zA-Z])/g, "s");
+    //Replace all 'x' with 'ks'
+    latinString = latinString.replace(/x/g, "ks");
+    
+}
+export function LatinToAdlamPreProcessing(latinString){
+    //Replace all 'ck' with 'k'
+    latinString = latinString.replace(/ck/g, "k");
+    //If the string starts with c replace it with k
+    if(latinString.startsWith("c")){
+        latinString = latinString.replace(/c/g, "k");
+    }
+    //If the string contains a c that is not the first letter, replace it with s
+    latinString = latinString.replace(/c(?![a-zA-Z])/g, "s");
+    //Replace all 'x' with 'ks'
+    latinString = latinString.replace(/x/g, "ks");
+    
+}
 export let latinAdlamCorrespondence = {
     "a": "𞤢",
     "b": "𞤦",
@@ -104,8 +142,8 @@ export let latinNkoCorrespondence = {
     "r": "ߙ",
     "s": "ߛ",
     "t": "ߕ",
-    "u": "u",
-    "v": "v",
+    "u": "ߎ",
+    "v": "ߥ",
     "w": "ߥ",
     "x": "ߞߛ",
     "y": "ߌ",
