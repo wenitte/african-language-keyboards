@@ -13,11 +13,20 @@ function Home() {
   let script = useParams()
     const [layout, setLayout] = useState("default");
     const [input, setInput] = useState("");
+    const [font, setFont] = useState("Noto Sans");
     const keyboard = useRef();
 
 if(script.script==undefined){
   script.script= "Nko";
 }
+useEffect(() => {
+  console.log(script.script)
+  if(script.script=="Gʋlse"){
+    setFont("Goulsse")
+  }
+  console.log(font)
+ 
+} ,[script.script]);
 let direction = chooseKeyboard(script.script).dir;
 
     // let script = {name: "N'ko", id: "nko"};
@@ -56,7 +65,7 @@ let direction = chooseKeyboard(script.script).dir;
 <Link to = {chooseCorrectAboutLink(script.script)} > <button> About  {getLanguageNameFromCode(script.script)}</button> </Link>
 <Link to = {chooseCorrectConvertLink(script.script)}> <button> Convert  {getLanguageNameFromCode(script.script)}</button> </Link>
         </header>
-        <textarea  rows="15" cols="100"  style={{width:"90vw", unicodeBidi:"bidi-override", 
+        <textarea  rows="15" cols="100"  style={{width:"90vw", unicodeBidi:"bidi-override", fontFamily:font, 
  direction:direction, height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput}/>
         <Keyboard
            layout= {chooseKeyboard(script.script)}

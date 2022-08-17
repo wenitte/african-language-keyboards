@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+@font-face {
+  font-family: "Goulsse";   /*Can be any text*/
+  src: local("Goulsse"),
+    url("./fonts/goulsse.ttf") format("truetype");
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

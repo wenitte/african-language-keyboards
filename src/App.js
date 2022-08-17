@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Containers/Home/Home.js';
 import Convert from './Containers/Convert/convert.js';
 import About from './Containers/About/about.js';
+import "./fonts/goulsse.ttf"
 import {Routes, Route,   BrowserRouter} from 'react-router-dom';
 
 function App() {
