@@ -65,6 +65,11 @@ export function LatinToGʋlsePreProcessing(latinString){
     latinString = latinString.replace(/c(?![a-zA-Z])/g, "s");
     //Replace all 'x' with 'ks'
     latinString = latinString.replace(/x/g, "ks");
+    //replace all qu with kw
+    latinString = latinString.replace(/qu/g, "kw");
+    //Replace all q with 'k'
+    latinString = latinString.replace(/q/g, "k");
+
     return latinString;
 }
 
@@ -174,4 +179,41 @@ export let latinNkoCorrespondence = {
     "?": "¿",
     ",": "߸",
     ".": "߷",
+}
+export let latinGʋlseCorrespondence = {
+    "a": "⟋",
+    "b": "ᐃ",
+    "c": "⟠",
+    "d": "⧨",
+    "e": "⟍",
+    "f": "𐒧",
+    "g": "𐒨",
+    "h": "ᔕ",
+    "i": "",
+    "j": "⊃",
+    "k": "ᗒ",
+    "l": "ᗕ",
+    "m": "ᗑ",
+    "n": "ᗐ",
+    "ny":"⍋",
+    "ɲ":"Ꜹ",
+    "o": "□",
+    "p": "↼",
+    "r": "⫰",
+    "s": "⊦",
+    "t": "߉",
+    "u": "v",
+    "ũ": "⩒",
+    "ʋ": "⩔",
+    "v": "",
+    "w": "𐌎",
+    "x": "",
+    "y": "ϴ",
+    "z": "ᕂ",
+    "ɗ":"⇀",
+    "ʐ": "⊂",
+    "gb": "ߜ",
+
+
+
 }
