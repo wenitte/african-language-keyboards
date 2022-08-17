@@ -6,6 +6,9 @@ export function chooseCorrespondence(a, b){
         if(b=="Adlam"){
             return latinAdlamCorrespondence;
         }
+        if(b=="Gʋlse"){
+            return latinGʋlseCorrespondence;
+        }
 
     }
 

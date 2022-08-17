@@ -51,8 +51,21 @@ function Convert() {
 
 
     let script = useParams()
+    let [direction, setDirection] = useState("LTR");
+    let [font, setFont] = useState("Noto Sans");
     let [latinValue, setLatinValue] = useState("");
     let [nkoValue, setNkoValue] = useState("");
+    //useEffect
+    useEffect(() => {
+      if(script.script=== "Nko" || script.script === "Adlam") {
+        setDirection("RTL");
+      }
+    } , [script.script]);
+    useEffect(() => {
+      if(script.script=== "Gʋlse") {
+        setFont("Gʋlse Font");
+      }
+    } , [script.script]);
     const onLatinChangeInput = event => {
         setNkoValue(convertScriptAToScriptB(event.target.value.toLowerCase()));
         console.log(convertScriptAToScriptB(event.target.value));
@@ -65,6 +78,8 @@ function Convert() {
     }
     
     function chooseCorrectWriteLink(code) {
+      //choose the correct direction here
+  
         return "/write/" + code+"/";
       } 
 
@@ -76,7 +91,7 @@ function Convert() {
             return chooseCorrespondence("latin", script.script)[matched];
         }
         );
-   
+        
         return convertedText;
     }
     const chooseCorrectAboutLink = (code) => {
@@ -101,8 +116,8 @@ function Convert() {
             </div>
             <div>
             {script.script} script   Output
-            <p style = {{direction:"RTL"}}> {nkoValue}</p>
-         <textArea value={nkoValue} onChange={onNkoChangeInput} style={{direction:"RTL", border:"none"}} >
+            <p style = {{direction:direction}}> {nkoValue}</p>
+         <textArea value={nkoValue} onChange={onNkoChangeInput} style={{direction:direction, border:"none"}} >
                 
             </textArea>
             </div>
