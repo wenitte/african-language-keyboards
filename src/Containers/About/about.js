@@ -28,6 +28,7 @@ const chooseCorrectConvertLink = (code) => {
 <Link to ={chooseCorrectConvertLink(script.script)} > <button> Convert  {getLanguageNameFromCode(script.script)}</button> </Link>
 </span>
         </header>
+        
       
         <p style={{lineHeight:"40px", textAlign:"left", margin:"50px"}}>{getAboutText(script.script)}</p>
 <h2> {getLanguageNameFromCode(script.script)} Alphabet</h2>

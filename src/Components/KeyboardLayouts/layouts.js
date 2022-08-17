@@ -2,6 +2,8 @@ function chooseKeyboard(lang){
     switch(lang){
         case "nko":
             return nkoKeyboard;
+        case "Gʋlse":
+            return gʋlseKeyboard;
         case 'Twi':
         return twiKeyboard;
         case 'Yoruba':
@@ -28,7 +30,26 @@ function chooseKeyboard(lang){
 
     }
 }
-        
+let  gʋlseKeyboard= {
+  availConvert: true,
+  dir:"LTR",
+  default: [
+    "1 2 3 4 5 6 7 8 9 0 - {bksp}",
+    "{tab} 𐌎 ⟍ ⫰ ߉  □ ↼ v ⩒ ⩔",
+    "{lock} ⟋ ⊦ ⧨ 𐒧 𐒨 ᔕ ⊃ ᗒ ᗕ ⇀ {enter}",
+    "{shift} ᕂ ⊂ ϴ ⟠ ᐃ ᗐ ᗑ ⍋ Ꜹ, . {shift}",
+    "@ {space}",
+    ],
+    shift: [
+        "1 2 3 4 5 6 7 8 9 0 - {bksp}",
+        "{tab} 𐌎 ⟍ ⫰ ߉  □ ↼ v ⩒ ⩔",
+        "{lock} ⟋ ⊦ ⧨ 𐒧 𐒨 ᔕ ⊃ ᗒ ᗕ ⇀ {enter}",
+        "{shift} ᕂ ⊂ ϴ ⟠ ᐃ ᗐ ᗑ ⍋ Ꜹ, . {shift}",
+        "@ {space}",
+    ],
+
+
+}
 let adlamKeyboard = {
   availConvert: true,
   dir:"RTL",
