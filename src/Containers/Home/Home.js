@@ -68,6 +68,7 @@ let direction = chooseKeyboard(script.script).dir;
         <textarea  rows="15" cols="100"  style={{width:"90vw", unicodeBidi:"bidi-override", fontFamily:font, 
  direction:direction, height:"50vh", fontSize:"30px"}} value={input} onChange={onChangeInput}/>
         <Keyboard
+        style={{fontFamily:font}}
            layout= {chooseKeyboard(script.script)}
             keyboardRef={r => (keyboard.current = r)}
             layoutName={layout}

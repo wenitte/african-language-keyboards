@@ -54,7 +54,7 @@ function Convert() {
     let [direction, setDirection] = useState("LTR");
     let [font, setFont] = useState("Noto Sans");
     let [latinValue, setLatinValue] = useState("");
-    let [nkoValue, setNkoValue] = useState("");
+    let [convertedValue, setNkoValue] = useState("");
     //useEffect
     useEffect(() => {
       if(script.script=== "Nko" || script.script === "Adlam") {
@@ -63,18 +63,18 @@ function Convert() {
     } , [script.script]);
     useEffect(() => {
       if(script.script=== "Gʋlse") {
-        setFont("Gʋlse Font");
+        setFont("Goulsse");
       }
     } , [script.script]);
     const onLatinChangeInput = event => {
         setNkoValue(convertScriptAToScriptB(event.target.value.toLowerCase()));
         console.log(convertScriptAToScriptB(event.target.value));
-        console.log(nkoValue);
+        console.log(convertedValue);
       };
     
     const onNkoChangeInput = event => {
         setNkoValue(event.target.value);
-        console.log(nkoValue);
+        console.log(convertedValue);
     }
     
     function chooseCorrectWriteLink(code) {
@@ -116,8 +116,8 @@ function Convert() {
             </div>
             <div>
             {script.script} script   Output
-            <p style = {{direction:direction}}> {nkoValue}</p>
-         <textArea value={nkoValue} onChange={onNkoChangeInput} style={{direction:direction, border:"none"}} >
+            <p style = {{direction:direction, fontFamily:font}} > {convertedValue}</p>
+         <textArea value={convertedValue} onChange={onNkoChangeInput} style={{direction:direction, border:"none"}} >
                 
             </textArea>
             </div>
