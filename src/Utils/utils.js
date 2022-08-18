@@ -17,4 +17,5 @@ let languages = {
     Adlam: "Adlam",
     Vai: "Vai",
     Gʋlse: "Gʋlse",
+    Nsibidi: "Nsibidi",
 }

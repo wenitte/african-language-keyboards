@@ -6,6 +6,11 @@
   src: local("Goulsse"),
     url("./fonts/goulsse.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Akugu";   /*Can be any text*/
+  src: local("Akugu"),
+    url("./fonts/akugu.ttf") format("truetype");
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

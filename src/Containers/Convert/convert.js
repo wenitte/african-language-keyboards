@@ -54,7 +54,7 @@ function Convert() {
     let [direction, setDirection] = useState("LTR");
     let [font, setFont] = useState("Noto Sans");
     let [latinValue, setLatinValue] = useState("");
-    let [convertedValue, setNkoValue] = useState("");
+    let [convertedValue, setConvertedValue] = useState("");
     //useEffect
     useEffect(() => {
       if(script.script=== "Nko" || script.script === "Adlam") {
@@ -65,15 +65,18 @@ function Convert() {
       if(script.script=== "Gʋlse") {
         setFont("Goulsse");
       }
+      else if (script.script === "Nsibidi") {
+        setFont("Akugu");
+      }
     } , [script.script]);
     const onLatinChangeInput = event => {
-        setNkoValue(convertScriptAToScriptB(event.target.value.toLowerCase()));
+        setConvertedValue(convertScriptAToScriptB(event.target.value.toLowerCase()));
         console.log(convertScriptAToScriptB(event.target.value));
         console.log(convertedValue);
       };
     
     const onNkoChangeInput = event => {
-        setNkoValue(event.target.value);
+        setConvertedValue(event.target.value);
         console.log(convertedValue);
     }
     
@@ -84,6 +87,8 @@ function Convert() {
       } 
 
     function convertScriptAToScriptB(input){
+      if(script.script !="Nsibidi"){
+      console.log(input);
         //Preprocess the input
         let preProcessedInput = choosePreProcessing("latin", script.script, input);
         //then replace all the latin characters with their nko equivalents
@@ -93,6 +98,14 @@ function Convert() {
         );
         
         return convertedText;
+      }
+      else{
+         //Preprocess the input
+         let preProcessedInput = choosePreProcessing("latin", script.script, input);
+          //then replace  the latin string with its Nsibidi equivalent
+          return chooseCorrespondence("latin", script.script)[preProcessedInput];
+        return input;
+      }
     }
     const chooseCorrectAboutLink = (code) => {
         return "/About/" + code+"/";
