@@ -86,10 +86,26 @@ export function LatinToGʋlsePreProcessing(latinString){
     return latinString;
 }
 export function LatinToNsibidiPreProcessing(latinString){
-    //If the string does not exist inside the correspondence table, return the empty string
-    if(!(latinString in englishNsibidiCorrespondence)){
+    //If the string does not contain a space and the string does not exist inside the correspondence table, return the empty string
+    if(!latinString.includes(" ") && !(latinString in englishNsibidiCorrespondence)){
         return "";
     }
+    //If the string contains a space, split the string into an array of words
+    if(latinString.includes(" ")){
+        let words = latinString.split(" ");
+        //For each word in the array, check if it exists in the correspondence table, if it does  not remove it from the array
+        for(let i = 0; i < words.length; i++){
+            if(!(words[i] in englishNsibidiCorrespondence)){
+                words.splice(i, 1);
+                i--;
+            }
+        }
+        //Join the array into a string
+        latinString = words.join(" ");
+        //Return the string
+        return latinString;
+    }
+    
     return latinString;
 }
 

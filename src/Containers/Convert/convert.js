@@ -100,11 +100,20 @@ function Convert() {
         return convertedText;
       }
       else{
+
          //Preprocess the input
          let preProcessedInput = choosePreProcessing("latin", script.script, input);
-          //then replace  the latin string with its Nsibidi equivalent
-          return chooseCorrespondence("latin", script.script)[preProcessedInput];
-        return input;
+         //If there is a space, split the input into an array of words
+          let words = preProcessedInput.split(" ");
+          //then replace each word in the array with its Nsibidi equivalent
+          let convertedText = words.map(word => {
+            return chooseCorrespondence("latin", script.script)[word];
+          }
+          ).join(" ");
+          return convertedText;
+          
+          
+        
       }
     }
     const chooseCorrectAboutLink = (code) => {
