@@ -5,26 +5,21 @@ function chooseKeyboard(lang){
         case "Gʋlse":
             return gʋlseKeyboard;
         case 'Twi':
-        return twiKeyboard;
+        return adinkraKeyboard;
         case 'Yoruba':
         return yorubaKeyboard;
         case 'Amharic':
-        return amharicKeyboard;
+        return geezKeyboard;
         case 'Arabic':
         return arabicKeyboard;
         case 'Igbo':
-        return igboKeyboard;
+        return nsibidiKeyboard;
         case 'Hausa':
         return hausaKeyboard;
-        case 'Mooré':
-        return mooréKeyboard;
-        case 'Kassem':
-        return kassemKeyboard;
         case 'Adlam':
         return adlamKeyboard;
         case 'Vai':
         return vaiKeyboard;
-
         default:
             return generalKeyboard;
 
@@ -69,7 +64,7 @@ let adlamKeyboard = {
   ]
 
 }
-let twiKeyboard = {
+let adinkraKeyboard = {
     default: [
       "ɛ ɔ",
       "{shift} {shift}",
@@ -95,7 +90,7 @@ let twiKeyboard = {
         ".com @ {space}",
       ],
   };
-  let igboKeyboard = {
+  let nsibidiKeyboard = {
     default: [
         "ˊ 1 2 3 4 5 6 7 8 9 0 ɗ ƙ {bksp}",
         "{tab} q w e r t y u i o p ụ ị",
@@ -127,7 +122,7 @@ let twiKeyboard = {
         ".com @ {space}",
       ],
   };
-  let amharicKeyboard = {
+  let geezKeyboard = {
     default: [
         "ሀ 1 2 3 4 5 6 7 8 9 0 - {bksp}",
         "{tab} ለ ሐ ሠ ረ ቀ ሰ ሶ ነ ወ ጀ ፈ አ ደ ተ አቀ",
@@ -150,38 +145,7 @@ let twiKeyboard = {
         ".com @ {space}",
       ],
     }
-let mooréKeyboard = {
-    default: [
-        "1 2 3 4 5 6 7 8 9 0 - {bksp}",
-        "{tab} q w e r t y u i o p ụ ị",
-        "{lock} a s d f g h j k l ọ ẹ ǝ {enter}",
-        "{shift} z y x c v b n m , . ṣ {shift}",
-        ".com @ {space}",
-        ],
-        shift: [
-            "! @ # $ % ^ & * ( ) _ + {bksp}",
-            "{tab} Q W E R T Y U I O P Ụ Ị",
-            "{lock} A S D F G H J K L Ọ Ẹ Ǝ {enter}",
-            "{shift} Z Ɓ C V B N M ; : Ṣ {shift}",
-            ".com @ {space}",
-        ],
-    }
-    let kassemKeyboard = {
-        default: [
-            "1 2 3 4 5 6 7 8 9 0 - {bksp}",
-            "{tab} q w e r t y u i o p ụ ị",
-            "{lock} a s d f g h j k l ọ ẹ ǝ {enter}",
-            "{shift} z y x c v b n m , . ṣ {shift}",
-            ".com @ {space}",
-            ],
-            shift: [
-                "! @ # $ % ^ & * ( ) _ + {bksp}",
-                "{tab} Q W E R T Y U I O P Ụ Ị",
-                "{lock} A S D F G H J K L Ọ Ẹ Ǝ {enter}",
-                "{shift} Z Ɓ C V B N M ; : Ṣ {shift}",
-                ".com @ {space}",
-            ],
-        }
+
    
     let nkoKeyboard = {
       availConvert: true,
@@ -231,5 +195,18 @@ let mooréKeyboard = {
           "{shift} .com @ {space} {shift}",
         ]
     }
+   export const keyboardMap = {
+      "Nko":nkoKeyboard,
+      "Gʋlse":gʋlseKeyboard,
+      'Adinkra':adinkraKeyboard,
+      'Geez':geezKeyboard,
+      'Arabic':arabicKeyboard,
+      'Nsibidi':nsibidiKeyboard,
+      'Gʋlse':gʋlseKeyboard,
+      'Adlam':adlamKeyboard,
+      'Vai':vaiKeyboard
+
+    }
+   
     let generalKeyboard = nkoKeyboard;
     export default chooseKeyboard;
