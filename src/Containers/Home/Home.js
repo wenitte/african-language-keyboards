@@ -2,6 +2,7 @@ import React, { Component,  useEffect, useState, useRef } from "react";
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import chooseKeyboard from "../../Components/KeyboardLayouts/layouts.js";
+import scripts from '../../Scripts/scripts.js'
 import  {useParams, Link} from "react-router-dom";
 import {getLanguageNameFromCode} from "../../Utils/utils.js";
 import ScriptSelectDropdown from "../../Components/ScriptSelectDropDown/ScriptSelectDropDown.js";

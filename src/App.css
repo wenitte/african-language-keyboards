@@ -11,6 +11,27 @@
   src: local("Akugu"),
     url("./fonts/akugu.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Adinkra";   /*Can be any text*/
+  src: local("Adinkra"),
+    url("./fonts/adinkra.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bete";   /*Can be any text*/
+  src: local("Bete"),
+    url("./fonts/bete.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sawarda Nubian";   /*Can be any text*/
+  src: local("Sawarda Nubian"),
+    url("./fonts/SawardaNubian.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Zaghawa Beria";   /*Can be any text*/
+  src: local("Zaghawa Beria"),
+    url("./fonts/ZaghawaBeria.ttf") format("truetype");
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
